@@ -1,5 +1,5 @@
 name: push detection
-on: push
+on: workflow_dispatch
 
 jobs:
   main-job:
@@ -9,7 +9,6 @@ jobs:
     steps:
       - run: |
           gh issue create --title "push event from ${{ github.actor }}" --body ""
-          gh issue close 29
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
