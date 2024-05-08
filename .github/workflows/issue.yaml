@@ -1,0 +1,11 @@
+name: push detection
+on: push
+
+jobs:
+  main-job:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - run: |
+          echo ${{ github.actor }}
