@@ -8,7 +8,7 @@ jobs:
       issues: write
     steps:
       - run: |
-          gh issue create --title "push event from ${{ github.actor }}" --body ""
+          gh auth status
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
